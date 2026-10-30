@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Form</title>
+<style>
+    body { font-family: Arial; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+    fieldset { width: 520px; padding: 15px; border: 1px solid #7f7f7f; }
+    legend { font-weight: bold; }
+    .row { margin: 8px 0; display: flex; align-items: flex-start; }
+    .row label.title { width: 90px; font-weight: normal; }
+    .row input[type="text"] { width: 250px; padding: 2px; border: 1px solid #7f7f7f; }
+    .row select { width: 150px; padding: 2px; }
+    .row textarea { width: 370px; height: 70px; border: 1px solid #7f7f7f; resize: none; }
+    .checkbox-group { display: flex; flex-wrap: wrap; gap: 12px; font-size: 14px; }
+    .checkbox-group label { white-space: nowrap; cursor: pointer; }
+    .btn-group { margin-left: 90px; margin-top: 15px; }
+    .btn-group input { padding: 3px 15px; background: #e1e1e1; border: 1px solid #7f7f7f; cursor: pointer; }
+</style>
+</head>
+<body>
+
+<form action="config.php" method="POST">
+    <fieldset>
+        <legend>Enter Your Information</legend>
+        
+        <div class="row">
+            <label class="title">Fullname</label>
+            <input type="text" name="fullname">
+        </div>
+        
+        <div class="row">
+            <label class="title">Address</label>
+            <input type="text" name="address">
+        </div>
+        
+        <div class="row">
+            <label class="title">Phone</label>
+            <input type="text" name="phone">
+        </div>
+        
+        <div class="row">
+            <label class="title">Gender</label>
+            <div>
+                <input type="radio" name="gender" value="Nam" checked> Nam 
+                <input type="radio" name="gender" value="Nữ"> Nữ
+            </div>
+        </div>
+        
+        <div class="row">
+            <label class="title">Country</label>
+            <select name="country">
+                <option value="Việt Nam">Việt Nam</option>
+                <option value="Mỹ">Mỹ</option>
+                <option value="Nhật Bản">Nhật Bản</option>
+            </select>
+        </div>
+        
+        <div class="row">
+            <label class="title">Study</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="study[]" value="PHP & MySQL"> PHP & MySQL</label>
+                <label><input type="checkbox" name="study[]" value="ASP.NET"> ASP.NET</label>
+                <label><input type="checkbox" name="study[]" value="CCNA"> CCNA</label>
+                <label><input type="checkbox" name="study[]" value="Security+"> Security+</label>
+            </div>
+        </div>
+        
+        <div class="row">
+            <label class="title">Note</label>
+            <textarea name="note"></textarea>
+        </div>
+        
+        <div class="btn-group">
+            <input type="submit" value="Gửi">
+            <input type="reset" value="Hủy">
+        </div>
+    </fieldset>
+</form>
+
+</body>
+</html>
